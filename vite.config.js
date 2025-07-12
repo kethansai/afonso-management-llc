@@ -5,6 +5,7 @@ import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/afonso-management-llc/",
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {

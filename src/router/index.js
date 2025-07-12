@@ -29,9 +29,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(
-    `${import.meta.env.BASE_URL}afonso-management-llc/`
-  ),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
