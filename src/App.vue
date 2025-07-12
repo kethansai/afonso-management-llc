@@ -1,16 +1,9 @@
 <template>
-  <div class="app-container">
-    <h1>Welcome to My Vue App</h1>
-    <p>This is a simple Vue.js application.</p>
-    <p>Feel free to explore and modify the code!</p>
-  </div>
+  <MenuBar />
+  <router-view />
 </template>
 
-<script setup></script>
-<style scoped>
-.app-container {
-  text-align: center;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
-}
-</style>
+<script setup>
+import MenuBar from "./components/MenuBar.vue";
+</script>
+<style scoped></style>
