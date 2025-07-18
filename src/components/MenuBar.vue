@@ -1,5 +1,7 @@
 <template>
-  <header class="sticky inset-x-0 top-0 z-50 w-full bg-white shadow-sm">
+  <header
+    class="sticky inset-x-0 top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800"
+  >
     <nav
       class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
       aria-label="Global"
@@ -8,20 +10,23 @@
         <RouterLink to="/" class="-m-1.5 p-1.5 flex gap-x-4 items-center">
           <img
             class="h-10 w-auto"
-            src="@/assets/images/logo3.png"
+            src="@/assets/images/logo.png"
             alt="Afonso Management"
           />
-          <h3 class="text-lg font-semibold text-gray-900">Afonso Management</h3>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Afonso Management
+          </h3>
         </RouterLink>
       </div>
       <div class="flex lg:hidden">
+        <ThemeToggle class="mr-2" />
         <button
           type="button"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
           @click="mobileMenuOpen = true"
         >
           <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="size-6" aria-hidden="true" />
+          <FAI icon="bars" class="size-6" aria-hidden="true" />
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-10">
@@ -29,98 +34,87 @@
           v-for="item in navigation"
           :key="item.name"
           :to="item.href"
-          class="flex items-center gap-1 text-sm/6 font-semibold text-gray-900"
+          class="flex items-center gap-1 text-sm/6 font-semibold text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300"
         >
-          <component
-            :is="item.icon || HomeIcon"
-            class="inline-block h-4 w-6"
+          <FAI
+            :icon="item.icon"
+            class="inline-block h-4 w-6 text-gray-500 dark:text-white"
             aria-hidden="true"
           />
           <span>{{ item.name }}</span>
         </RouterLink>
       </div>
-      <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900"
-          >Log in <span aria-hidden="true">&rarr;</span></a
-        >
-      </div> -->
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <ThemeToggle />
+      </div>
     </nav>
-    <Dialog
-      class="lg:hidden"
-      @close="mobileMenuOpen = false"
-      :open="mobileMenuOpen"
+    <!-- Mobile menu overlay -->
+    <div
+      v-if="mobileMenuOpen"
+      class="fixed inset-0 z-50 lg:hidden"
+      @click="mobileMenuOpen = false"
+    ></div>
+
+    <!-- Mobile menu -->
+    <div
+      :class="[
+        'fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-gray-100/10 transition-transform duration-300 ease-in-out lg:hidden',
+        mobileMenuOpen ? 'translate-x-0' : 'translate-x-full',
+      ]"
     >
-      <div class="fixed inset-0 z-50" />
-      <DialogPanel
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-      >
-        <div class="flex items-center justify-between">
-          <RouterLink to="/" class="-m-1.5 p-1.5 flex gap-x-4 items-center">
-            <img
-              class="h-10 w-auto"
-              src="@/assets/images/logo3.png"
-              alt="Afonso Management"
-            />
-            <h3 class="text-lg font-semibold text-gray-900">
-              Afonso Management
-            </h3>
-          </RouterLink>
-          <button
-            type="button"
-            class="-m-2.5 rounded-md p-2.5 text-gray-700"
-            @click="mobileMenuOpen = false"
-          >
-            <span class="sr-only">Close menu</span>
-            <XMarkIcon class="size-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <RouterLink
-                v-for="item in navigation"
-                :key="item.name"
-                :to="item.href"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-              >
-                <component
-                  :is="item.icon || HomeIcon"
-                  class="inline-block h-6 w-6 mr-2"
-                  aria-hidden="true"
-                />
-                {{ item.name }}
-              </RouterLink>
-            </div>
-            <div class="py-6">
-              <!-- <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >Log in</a
-              > -->
-            </div>
+      <div class="flex items-center justify-between">
+        <RouterLink to="/" class="-m-1.5 p-1.5 flex gap-x-4 items-center">
+          <img
+            class="h-10 w-auto"
+            src="@/assets/images/logo.png"
+            alt="Afonso Management"
+          />
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Afonso Management
+          </h3>
+        </RouterLink>
+        <button
+          type="button"
+          class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300"
+          @click="mobileMenuOpen = false"
+        >
+          <span class="sr-only">Close menu</span>
+          <FAI icon="x" class="size-6" aria-hidden="true" />
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10 dark:divide-gray-400/10">
+          <div class="space-y-2 py-6">
+            <RouterLink
+              v-for="item in navigation"
+              :key="item.name"
+              :to="item.href"
+              @click="mobileMenuOpen = false"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <FAI
+                :icon="item.icon"
+                class="inline-block h-4 w-6 text-gray-700 dark:text-white"
+              />
+              {{ item.name }}
+            </RouterLink>
           </div>
         </div>
-      </DialogPanel>
-    </Dialog>
+      </div>
+    </div>
   </header>
 </template>
 <script setup>
+import ThemeToggle from "@/components/ThemeToggle.vue";
+
 import { ref } from "vue";
-import { Dialog, DialogPanel } from "@headlessui/vue";
-import {
-  Bars3Icon,
-  XMarkIcon,
-  HomeIcon,
-  EnvelopeIcon,
-  BuildingOfficeIcon,
-  WrenchScrewdriverIcon,
-} from "@heroicons/vue/24/outline";
 import { RouterLink } from "vue-router";
+
 const navigation = [
-  { name: "Home", href: "/", icon: HomeIcon },
-  { name: "Services", href: "/services", icon: WrenchScrewdriverIcon },
-  { name: "About", href: "/about", icon: BuildingOfficeIcon },
-  { name: "Contact", href: "/contact", icon: EnvelopeIcon },
+  { name: "Home", href: "/", icon: "house" },
+  { name: "Services", href: "/services", icon: "screwdriver-wrench" },
+  { name: "About", href: "/about", icon: "building" },
+  { name: "Contact", href: "/contact", icon: "envelope" },
 ];
 const mobileMenuOpen = ref(false);
 </script>

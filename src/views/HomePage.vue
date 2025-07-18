@@ -1,8 +1,8 @@
 <template>
   <HeroSection />
-  <TeamSeaction />
+  <TestimonialsSection />
 </template>
 <script setup>
 import HeroSection from "@/sections/home/HeroSection.vue";
-import TeamSeaction from "@/sections/home/TeamSection.vue";
+import TestimonialsSection from "@/sections/home/TestimonialsSection.vue";
 </script>

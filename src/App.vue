@@ -1,7 +1,13 @@
 <template>
-  <MenuBar />
-  <router-view />
-  <FooterSection />
+  <div
+    class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 w-full"
+  >
+    <MenuBar />
+    <main class="flex-1">
+      <router-view />
+    </main>
+    <FooterSection />
+  </div>
 </template>
 
 <script setup>

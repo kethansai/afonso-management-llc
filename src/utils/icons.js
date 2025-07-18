@@ -1,0 +1,55 @@
+import {
+  faDiscord,
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faBuilding,
+  faEnvelope,
+  faHouse,
+  faMoon,
+  faScrewdriverWrench,
+  faSun,
+  faX,
+  faBars,
+  faPhone,
+  faQuoteLeft,
+  faChevronLeft,
+  faChevronRight,
+  faUser,
+  faUsers,
+  faBookOpen,
+  faBolt,
+  faCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
+
+export const addIcons = (library) => {
+  library.add(
+    faX,
+    faHouse,
+    faBuilding,
+    faScrewdriverWrench,
+    faEnvelope,
+    faMoon,
+    faSun,
+    faBars,
+    faPhone,
+    faQuoteLeft,
+    faChevronLeft,
+    faChevronRight,
+    faFacebook,
+    faInstagram,
+    faYoutube,
+    faLinkedin,
+    faXTwitter,
+    faDiscord,
+    faUser,
+    faUsers,
+    faBookOpen,
+    faBolt,
+    faCircleCheck
+  );
+};
