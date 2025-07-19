@@ -82,20 +82,17 @@
       <div class="flex flex-wrap justify-center gap-8">
         <!-- Badminton Courts -->
         <div
-          class="rounded-xl shadow-lg dark:shadow-gray-700/20 hover:shadow-xl dark:hover:shadow-gray-700/30 transition-shadow duration-300"
+          class="rounded-xl shadow-lg bg-white dark:bg-gray-800 w-92 dark:shadow-gray-700/20 hover:shadow-xl dark:hover:shadow-gray-700/30 transition-shadow duration-300"
           v-for="service in services"
           :key="service.title"
         >
           <img
-            class="rounded-t-lg object-cover h-60 w-80"
+            class="rounded-t-lg object-cover aspect-3/2 h-48 w-full"
             :src="service.image"
             :alt="service.title"
           />
-          <div
-            class="inset-0 bg-gradient-to-br to-transparent p-8"
-            :class="`from-${service.color}/10`"
-          >
-            <div class="flex items-center gap-2 mb-6">
+          <div class="rounded-xl p-8">
+            <div class="flex items-center gap-2 mb-6 -ml-1">
               <FAI
                 :icon="service.icon"
                 class="w-8 h-8 text-xl"
