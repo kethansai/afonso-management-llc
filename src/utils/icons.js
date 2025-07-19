@@ -24,6 +24,7 @@ import {
   faBookOpen,
   faBolt,
   faCircleCheck,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const addIcons = (library) => {
@@ -50,6 +51,7 @@ export const addIcons = (library) => {
     faUsers,
     faBookOpen,
     faBolt,
-    faCircleCheck
+    faCircleCheck,
+    faStar
   );
 };
