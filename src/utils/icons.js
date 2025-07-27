@@ -25,6 +25,9 @@ import {
   faBolt,
   faCircleCheck,
   faStar,
+  faTableTennisPaddleBall,
+  faSpinner,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const addIcons = (library) => {
@@ -52,6 +55,9 @@ export const addIcons = (library) => {
     faBookOpen,
     faBolt,
     faCircleCheck,
-    faStar
+    faStar,
+    faTableTennisPaddleBall,
+    faSpinner,
+    faCircleXmark
   );
 };

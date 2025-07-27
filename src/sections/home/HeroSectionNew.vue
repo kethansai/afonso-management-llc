@@ -1,9 +1,91 @@
 <template>
   <main>
-    <div class="relative isolate overflow-hidden">
+    <div class="relative isolate overflow-hidden mb-16">
+      <!-- Animated background -->
+      <div
+        ref="bgPattern"
+        class="absolute inset-0 -z-20"
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { duration: 1000 } }"
+      >
+        <svg
+          class="absolute inset-x-0 top-0 h-256 w-full mask-[radial-gradient(32rem_32rem_at_center,white,transparent)] stroke-gray-200 dark:stroke-gray-700"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="hero-pattern"
+              width="200"
+              height="200"
+              x="50%"
+              y="-1"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 200V.5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg
+            x="50%"
+            y="-1"
+            class="overflow-visible fill-gray-50 dark:fill-gray-800"
+          >
+            <path
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+              stroke-width="0"
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            stroke-width="0"
+            fill="url(#hero-pattern)"
+          />
+        </svg>
+      </div>
+
+      <!-- Floating gradient blur -->
+      <div
+        ref="floatingBlur"
+        class="absolute top-0 right-0 left-1/2 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+        aria-hidden="true"
+        v-motion
+        :initial="{ opacity: 0, scale: 0.8, rotate: -10 }"
+        :enter="{
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+          transition: { duration: 1500, delay: 300 },
+        }"
+      >
+        <div
+          class="aspect-801/1036 w-200.25 bg-gradient-to-tr from-[#ff80b5] via-[#9089fc] to-[#10b981] opacity-30"
+          style="
+            clip-path: polygon(
+              63.1% 29.5%,
+              100% 17.1%,
+              76.6% 3%,
+              48.4% 0%,
+              44.6% 4.7%,
+              54.5% 25.3%,
+              59.8% 49%,
+              55.2% 57.8%,
+              44.4% 57.2%,
+              27.8% 47.9%,
+              35.1% 81.5%,
+              0% 97.7%,
+              39.2% 100%,
+              35.2% 81.4%,
+              97.2% 52.8%,
+              63.1% 29.5%
+            );
+          "
+        />
+      </div>
+
       <!-- Main content -->
       <div class="overflow-hidden">
-        <div class="mx-auto px-6 pt-10 pb-12 sm:pt-24 lg:px-8 lg:pt-20">
+        <div class="mx-auto px-6 pt-10 pb-32 sm:pt-24 lg:px-8 lg:pt-20">
           <div
             class="mx-auto gap-14 flex-root lg:flex lg:items-center max-w-7xl"
           >
@@ -36,7 +118,7 @@
                 <span
                   class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
                 >
-                  Welcome to Afonso Management
+                  Hi, I'm Oscar Afonso
                 </span>
               </h1>
 
@@ -73,8 +155,8 @@
                   transition: { duration: 600, delay: 1100 },
                 }"
               >
-                <a
-                  href="#services"
+                <router-link
+                  to="/services"
                   class="group relative overflow-hidden rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   v-motion
                   :initial="{ scale: 0 }"
@@ -87,9 +169,9 @@
                   <div
                     class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   ></div>
-                </a>
-                <a
-                  href="#about"
+                </router-link>
+                <router-link
+                  to="/about"
                   class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:translate-x-1"
                   v-motion
                   :initial="{ opacity: 0, x: -20 }"
@@ -105,7 +187,7 @@
                     aria-hidden="true"
                     >→</span
                   >
-                </a>
+                </router-link>
               </div>
 
               <!-- Floating elements -->

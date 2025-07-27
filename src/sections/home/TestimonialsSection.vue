@@ -13,61 +13,175 @@
 
       <div class="relative mt-16">
         <!-- Carousel container -->
-        <div class="overflow-hidden">
+        <div
+          class="overflow-hidden rounded-2xl"
+          v-motion
+          :initial="{ opacity: 0, scale: 0.95 }"
+          :enter="{
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 600, delay: 200 },
+          }"
+        >
           <div
-            class="flex transition-transform duration-500 ease-in-out"
+            class="flex transition-transform duration-700 ease-in-out"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
           >
             <div
-              v-for="testimonial in testimonials"
+              v-for="(testimonial, index) in testimonials"
               :key="testimonial.id"
               class="w-full flex-shrink-0 px-12 md:px-4"
             >
-              <blockquote class="mx-auto max-w-2xl sm:flex lg:block">
-                <FAI icon="quote-left" class="text-5xl text-gray-300" />
+              <blockquote
+                class="mx-auto max-w-2xl sm:flex lg:block group"
+                v-motion
+                :initial="{ opacity: 0, y: 30 }"
+                :enter="{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 500, delay: 300 + index * 100 },
+                }"
+              >
+                <!-- Animated quote icon -->
+                <div
+                  class="relative"
+                  v-motion
+                  :initial="{ scale: 0, rotate: -45 }"
+                  :enter="{
+                    scale: 1,
+                    rotate: 0,
+                    transition: { duration: 800, delay: 400, ease: 'backOut' },
+                  }"
+                >
+                  <FAI
+                    icon="quote-left"
+                    class="text-5xl text-gray-300 dark:text-gray-600 group-hover:text-indigo-400 transition-colors duration-500"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-20 scale-0 group-hover:scale-150 transition-all duration-500"
+                  ></div>
+                </div>
+
                 <div class="mt-8 sm:mt-0 sm:ml-6 lg:mt-10 lg:ml-0">
-                  <StarRating class="-ml-3" :value="testimonial.rating" />
-                  <p class="text-lg text-gray-600 dark:text-gray-400">
-                    {{ testimonial.quote }}
-                  </p>
-                  <cite
-                    class="mt-4 block font-semibold text-gray-900 italic dark:text-gray-200"
-                    >- {{ testimonial.attribution }}</cite
+                  <!-- Animated star rating -->
+                  <div
+                    class="mb-6"
+                    v-motion
+                    :initial="{ opacity: 0, x: -30 }"
+                    :enter="{
+                      opacity: 1,
+                      x: 0,
+                      transition: { duration: 500, delay: 500 + index * 100 },
+                    }"
                   >
+                    <StarRating
+                      class="-ml-3 transform group-hover:scale-110 transition-transform duration-300"
+                      :value="testimonial.rating"
+                    />
+                  </div>
+
+                  <!-- Testimonial text with typewriter effect -->
+                  <p
+                    class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300"
+                    v-motion
+                    :initial="{ opacity: 0, y: 20 }"
+                    :enter="{
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 600, delay: 600 + index * 100 },
+                    }"
+                  >
+                    "{{ testimonial.quote }}"
+                  </p>
+
+                  <!-- Attribution with slide-in effect -->
+                  <cite
+                    class="mt-6 block font-semibold text-gray-900 italic dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all duration-300"
+                    v-motion
+                    :initial="{ opacity: 0, x: 30 }"
+                    :enter="{
+                      opacity: 1,
+                      x: 0,
+                      transition: { duration: 500, delay: 700 + index * 100 },
+                    }"
+                  >
+                    — {{ testimonial.attribution }}
+                  </cite>
                 </div>
               </blockquote>
             </div>
           </div>
         </div>
 
-        <!-- Navigation buttons -->
+        <!-- Enhanced navigation buttons -->
         <button
-          class="absolute top-1/2 left-0 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+          class="absolute top-1/2 left-0 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-3 shadow-xl text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transform hover:scale-110 transition-all duration-300 group"
           @click="prevSlide"
+          v-motion
+          :initial="{ opacity: 0, x: -20 }"
+          :enter="{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 500, delay: 800 },
+          }"
         >
-          <FAI icon="chevron-left" class="h-5 w-5" />
-        </button>
-        <button
-          class="absolute top-1/2 right-0 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-          @click="nextSlide"
-        >
-          <FAI icon="chevron-right" class="h-5 w-5" />
+          <FAI
+            icon="chevron-left"
+            class="h-5 w-5 group-hover:-translate-x-0.5 transition-transform duration-200"
+          />
+          <div
+            class="absolute inset-0 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-200"
+          ></div>
         </button>
 
-        <!-- Pagination indicators -->
-        <div class="flex justify-center mt-8 space-x-2">
+        <button
+          class="absolute top-1/2 right-0 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-3 shadow-xl text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transform hover:scale-110 transition-all duration-300 group"
+          @click="nextSlide"
+          v-motion
+          :initial="{ opacity: 0, x: 20 }"
+          :enter="{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 500, delay: 800 },
+          }"
+        >
+          <FAI
+            icon="chevron-right"
+            class="h-5 w-5 group-hover:translate-x-0.5 transition-transform duration-200"
+          />
+          <div
+            class="absolute inset-0 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-200"
+          ></div>
+        </button>
+
+        <!-- Enhanced pagination indicators -->
+        <div
+          class="flex justify-center mt-8 space-x-3"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 500, delay: 900 },
+          }"
+        >
           <button
             v-for="(_, index) in testimonials"
             :key="index"
             :class="[
-              'w-2.5 h-2.5 rounded-full focus:outline-none transition-colors',
+              'h-3 rounded-full focus:outline-none transition-all duration-300 transform hover:scale-125',
               index === currentIndex
-                ? 'bg-gray-800 dark:bg-white'
-                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500',
+                ? 'w-8 bg-indigo-600 shadow-lg'
+                : 'w-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500',
             ]"
             @click="goToSlide(index)"
             :aria-label="`Go to testimonial ${index + 1}`"
-          ></button>
+          >
+            <div
+              v-if="index === currentIndex"
+              class="w-full h-full bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full animate-pulse"
+            ></div>
+          </button>
         </div>
       </div>
     </div>

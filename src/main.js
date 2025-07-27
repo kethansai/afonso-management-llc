@@ -5,9 +5,9 @@ import { addIcons } from "@/utils/icons";
 import { useTheme } from "@/composables/useTheme";
 import { createApp } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { MotionPlugin } from "@vueuse/motion";
 
 import App from "@/App.vue";
-import router from "@/router";
 import ElementPlus from "element-plus";
 
 addIcons(library);
@@ -18,9 +18,8 @@ addIcons(library);
   initializeTheme();
 
   const app = createApp(App);
-  app.use(router);
   app.use(ElementPlus);
+  app.use(MotionPlugin);
   app.component("FAI", FontAwesomeIcon);
-  await router.isReady();
   app.mount("#app");
 })();
