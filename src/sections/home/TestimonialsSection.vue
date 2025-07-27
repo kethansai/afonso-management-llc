@@ -1,9 +1,9 @@
 <template>
   <section
     aria-labelledby="testimonial-heading"
-    class="relative mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 lg:py-20"
+    class="relative mx-auto w-full px-4 py-4 sm:px-6 lg:px-8 lg:py-20 lg:max-w-7xl"
   >
-    <div class="mx-auto max-w-2xl lg:max-w-none">
+    <div class="mx-auto">
       <h2
         id="testimonial-heading"
         class="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-gray-100"
