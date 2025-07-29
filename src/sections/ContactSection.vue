@@ -455,16 +455,15 @@ const isLoading = ref(false);
 
 const sendEmail = () => {
   isLoading.value = true;
-
+  const {
+    VITE_EMAILJS_SERVICE_ID,
+    VITE_EMAILJS_TEMPLATE_ID,
+    VITE_EMAILJS_PUBLIC_KEY,
+  } = import.meta.env;
   emailjs
-    .sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.value,
-      {
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      }
-    )
+    .sendForm(VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, form.value, {
+      publicKey: VITE_EMAILJS_PUBLIC_KEY,
+    })
     .then(
       () => {
         console.log("SUCCESS!");
@@ -473,7 +472,13 @@ const sendEmail = () => {
         isLoading.value = false;
       },
       (error) => {
-        console.log("FAILED...", error.text);
+        console.log(
+          "FAILED...",
+          error.text,
+          VITE_EMAILJS_SERVICE_ID,
+          VITE_EMAILJS_TEMPLATE_ID,
+          VITE_EMAILJS_PUBLIC_KEY
+        );
         showErrorNotification();
         isLoading.value = false;
       }
