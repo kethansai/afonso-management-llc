@@ -1,5 +1,5 @@
 <template>
-  <div class="relative isolate mb-16">
+  <div class="relative isolate">
     <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
       <!-- Left column - Contact info -->
       <div
@@ -21,7 +21,7 @@
             }"
           >
             <span
-              class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              class="dark:bg-gradient-to-r dark:from-indigo-600 dark:via-purple-600 dark:to-pink-600 dark:bg-clip-text dark:text-transparent"
             >
               Get in touch
             </span>
@@ -343,7 +343,11 @@
               transition: { duration: 600, delay: 1400 },
             }"
           >
-            Visit Our Office
+            <span
+              class="dark:bg-gradient-to-r dark:from-indigo-600 dark:via-purple-600 dark:to-pink-600 dark:bg-clip-text dark:text-transparent"
+            >
+              Visit Our Office
+            </span>
           </h2>
           <p
             class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"

@@ -14,6 +14,11 @@
         <ServicesSection />
       </section>
 
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <ProjectsSection />
+      </section>
+
       <!-- About Section -->
       <section id="about" class="section">
         <AboutSection />
@@ -43,6 +48,7 @@ import HeroSection from "@/sections/home/HeroSection.vue";
 import ServicesSection from "@/sections/home/ServicesSection.vue";
 import AboutSection from "@/sections/about/AboutSection.vue";
 import TeamSection from "@/sections/about/TeamSection.vue";
+import ProjectsSection from "@/sections/ProjectsSection.vue";
 import TestimonialsSection from "@/sections/home/TestimonialsSection.vue";
 import ContactSection from "@/sections/ContactSection.vue";
 </script>

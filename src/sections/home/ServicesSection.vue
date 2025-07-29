@@ -1,5 +1,5 @@
 <template>
-  <div class="relative isolate mb-16">
+  <div class="relative isolate">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Header Section -->
       <div
@@ -11,7 +11,11 @@
         <h1
           class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
         >
-          Our Services
+          <span
+            class="dark:bg-gradient-to-r dark:from-indigo-600 dark:via-purple-600 dark:to-pink-600 dark:bg-clip-text dark:text-transparent"
+          >
+            Our Services
+          </span>
         </h1>
         <p
           class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
@@ -134,12 +138,12 @@
 </template>
 
 <script setup>
-import BadmintonImage from "@/assets/images/badminton.jpg";
-import YogaImage from "@/assets/images/yoga.jpg";
-import FitnessImage from "@/assets/images/fitness.jpg";
-import CoachingImage from "@/assets/images/coaching.jpg";
-import CommunityImage from "@/assets/images/community.jpg";
-import TableTennisImage from "@/assets/images/table-tennis.jpg";
+import BadmintonImage from "@/assets/images/services/badminton.jpg";
+import YogaImage from "@/assets/images/services/yoga.jpg";
+import FitnessImage from "@/assets/images/services/fitness-centre.jpg";
+import CoachingImage from "@/assets/images/services/coaching.jpg";
+import CommunityImage from "@/assets/images/services/community.jpg";
+import TableTennisImage from "@/assets/images/services/table-tennis.jpg";
 const services = [
   {
     title: "Badminton Courts",

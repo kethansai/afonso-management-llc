@@ -59,8 +59,8 @@
 </template>
 
 <script setup>
-import AkshayAre from "@/assets/images/akshay-are.jpg";
-import NeelPatel from "@/assets/images/neel-patel.jpg";
+import AkshayAre from "@/assets/images/team/akshay-are.jpg";
+import NeelPatel from "@/assets/images/team/neel-patel.jpg";
 const people = [
   {
     name: "Akshay Are",
