@@ -23,7 +23,7 @@
               <!-- Title with typewriter effect -->
               <h3
                 ref="heroTitle"
-                class="text-4xl md:text-5xl font-semibold mb-2 tracking-tight dark:text-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text"
+                class="text-4xl text-center md:text-left md:text-5xl font-semibold mb-2 tracking-tight dark:text-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text"
                 v-motion
                 :initial="{ opacity: 0, y: 50, scale: 0.9 }"
                 :enter="{
@@ -39,7 +39,7 @@
               <!-- Description with stagger animation -->
               <p
                 ref="heroDescription"
-                class="mt-8 text-lg leading-8 text-gray-600 dark:text-gray-300"
+                class="mt-8 text-center md:text-left text-lg leading-8 text-gray-600 dark:text-gray-300"
                 v-motion
                 :initial="{ opacity: 0, y: 30 }"
                 :enter="{

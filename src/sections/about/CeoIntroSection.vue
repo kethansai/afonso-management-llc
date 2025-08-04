@@ -76,7 +76,7 @@
               Hi, I'm Oscar Afonso
             </h2>
             <div
-              class="w-20 h-1 dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 rounded-full"
+              class="w-20 h-1 mx-auto md:mx-0 dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 rounded-full"
               v-motion
               :initial="{ scaleX: 0 }"
               :enter="{ scaleX: 1, transition: { duration: 600, delay: 800 } }"
