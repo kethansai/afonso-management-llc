@@ -199,8 +199,8 @@ const navigation = [
   { name: "Home", section: "home", icon: "house" },
   { name: "Services", section: "services", icon: "screwdriver-wrench" },
   { name: "Projects", section: "projects", icon: "rocket" },
-  { name: "About", section: "about", icon: "building" },
   { name: "Testimonials", section: "testimonials", icon: "star" },
+  { name: "About", section: "about", icon: "building" },
   { name: "Contact", section: "contact", icon: "envelope" },
 ];
 

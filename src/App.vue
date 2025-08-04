@@ -20,14 +20,14 @@
         <ProjectsSection />
       </section>
 
-      <!-- About Section -->
-      <section id="about" class="section">
-        <TeamSection />
-      </section>
-
       <!-- Testimonials Section -->
       <section id="testimonials" class="section">
         <TestimonialsSection />
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <TeamSection />
       </section>
 
       <!-- Contact Section -->
