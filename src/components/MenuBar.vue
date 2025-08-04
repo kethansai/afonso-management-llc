@@ -198,8 +198,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 const navigation = [
   { name: "Home", section: "home", icon: "house" },
   { name: "Services", section: "services", icon: "screwdriver-wrench" },
-  { name: "About", section: "about", icon: "building" },
   { name: "Projects", section: "projects", icon: "rocket" },
+  { name: "About", section: "about", icon: "building" },
   { name: "Testimonials", section: "testimonials", icon: "star" },
   { name: "Contact", section: "contact", icon: "envelope" },
 ];

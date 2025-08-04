@@ -304,7 +304,7 @@ const currentProjects = [
     id: 2,
     title: "Pan Am Championship",
     description:
-      "Managing logistics and operations for the prestigious Pan American Badminton Championships, ensuring world-class tournament experiences.",
+      "Managing logistics, operations, athlete training coordination, and sponsorship for the prestigious Pan American Badminton Championships, delivering a seamless world-class tournament experience.",
     image: PanAmImage,
     category: "Tournament Management",
     year: "2024",

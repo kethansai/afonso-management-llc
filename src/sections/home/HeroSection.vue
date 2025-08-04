@@ -21,9 +21,9 @@
               }"
             >
               <!-- Title with typewriter effect -->
-              <h1
+              <h3
                 ref="heroTitle"
-                class="text-3xl font-semibold tracking-tight text-pretty text-center md:text-left text-gray-900 dark:text-white md:text-6xl lg:text-7xl"
+                class="text-4xl md:text-5xl font-semibold mb-2 tracking-tight dark:text-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text"
                 v-motion
                 :initial="{ opacity: 0, y: 50, scale: 0.9 }"
                 :enter="{
@@ -33,17 +33,13 @@
                   transition: { duration: 800, delay: 700, ease: 'backOut' },
                 }"
               >
-                <span
-                  class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
-                >
-                  Welcome to Afonso Management
-                </span>
-              </h1>
+                Welcome to Afonso Management
+              </h3>
 
               <!-- Description with stagger animation -->
               <p
                 ref="heroDescription"
-                class="mt-8 text-lg font-medium text-pretty text-gray-500 dark:text-gray-300 sm:text-xl/8"
+                class="mt-8 text-lg leading-8 text-gray-600 dark:text-gray-300"
                 v-motion
                 :initial="{ opacity: 0, y: 30 }"
                 :enter="{
@@ -52,13 +48,13 @@
                   transition: { duration: 600, delay: 900 },
                 }"
               >
-                We are a leading sports facility management company committed to
-                excellence, innovation, and performance. Our expert team
-                specializes in optimizing operations, elevating athlete and
-                guest experiences, and driving sustainable growth for
-                multi-sport venues. With a focus on quality, efficiency, and
-                long-term success, we turn sports facilities into thriving,
-                high-performance environments.
+                We are a premier sports facility management company dedicated to
+                delivering excellence, innovation, and outstanding performance.
+                Our experienced team excels at streamlining operations,
+                enhancing athlete and guest experiences, and fostering
+                sustainable growth for multi-sport venues. With an emphasis on
+                quality, efficiency, and long-term success, we transform sports
+                facilities into vibrant, high-performance environments.
               </p>
 
               <!-- Call-to-action buttons -->
@@ -152,7 +148,7 @@
                 <img
                   ref="img1"
                   class="col-span-3 row-span-3 object-cover w-full h-full rounded-xl bg-gray-900/5 shadow-xl transform hover:scale-110 hover:rotate-2 transition-all duration-500 hover:z-10 relative"
-                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                  src="@/assets/images/services/badminton.jpg"
                   alt="Sports facility"
                   v-motion
                   :initial="{ opacity: 0, scale: 0.5, rotate: -10 }"
@@ -168,7 +164,7 @@
                 <img
                   ref="img2"
                   class="col-span-3 row-span-3 object-cover w-full h-full rounded-xl bg-gray-900/5 shadow-xl transform hover:scale-110 hover:-rotate-2 transition-all duration-500 hover:z-10 relative"
-                  src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                  src="@/assets/images/services/coaching.jpg"
                   alt="Team meeting"
                   v-motion
                   :initial="{ opacity: 0, scale: 0.5, rotate: 10 }"
@@ -184,7 +180,7 @@
                 <img
                   ref="img3"
                   class="col-span-4 row-span-2 object-cover w-full h-full rounded-xl bg-gray-900/5 shadow-xl transform hover:scale-110 hover:rotate-1 transition-all duration-500 hover:z-10 relative"
-                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
+                  src="@/assets/images/services/table-tennis.jpg"
                   alt="Training session"
                   v-motion
                   :initial="{ opacity: 0, scale: 0.5, y: 50 }"
@@ -200,7 +196,7 @@
                 <img
                   ref="img4"
                   class="col-span-2 row-span-3 object-cover w-full h-full rounded-xl bg-gray-900/5 shadow-xl transform hover:scale-110 hover:-rotate-3 transition-all duration-500 hover:z-10 relative"
-                  src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
+                  src="@/assets/images/services/fitness-centre.jpg"
                   alt="Fitness equipment"
                   v-motion
                   :initial="{ opacity: 0, scale: 0.5, rotate: -15 }"
