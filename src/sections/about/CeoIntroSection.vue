@@ -76,13 +76,13 @@
               Hi, I'm Oscar Afonso <br />
               <span class="text-3xl">Welcome to my business.</span>
             </h2>
-            <div
+            <!-- <div
               class="w-40 h-1 mx-auto dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 rounded-full"
               v-motion
               :initial="{ scaleX: 0 }"
               :enter="{ scaleX: 1, transition: { duration: 600, delay: 800 } }"
-            ></div>
-            <p
+            ></div> -->
+            <!-- <p
               class="text-center text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-gray-300"
               v-motion
               :initial="{ opacity: 0, y: 20 }"
@@ -106,7 +106,7 @@
               multi-sport venues. With a focus on quality, efficiency, and
               long-term success, we turn sports facilities into thriving,
               high-performance environments.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>

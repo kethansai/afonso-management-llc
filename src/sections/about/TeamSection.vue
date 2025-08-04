@@ -44,6 +44,9 @@
           <p class="text-sm/6 text-gray-600 dark:text-gray-300">
             {{ person.role }}
           </p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">
+            {{ person.specialization }}
+          </p>
           <ul class="mt-6 flex justify-center gap-x-6">
             <li v-for="social in person.social" :key="social.icon[1]">
               <a :href="social.url" class="text-gray-400 hover:text-gray-500">
@@ -65,6 +68,7 @@ const people = [
   {
     name: "Akshay Are",
     role: "Program Manager",
+    specialization: "UC Riverside, MBA",
     imageUrl: AkshayAre,
     social: [
       {
@@ -80,6 +84,7 @@ const people = [
   {
     name: "Neel Patel",
     role: "Data Analyst",
+    specialization: "Westcliff, MBA",
     imageUrl: NeelPatel,
     social: [
       {
