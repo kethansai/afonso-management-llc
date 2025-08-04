@@ -49,7 +49,16 @@
                 }"
               >
                 We are a premier sports facility management company dedicated to
-                delivering excellence, innovation, and outstanding performance.
+                delivering
+                <span class="font-medium text-blue-600 dark:text-blue-400"
+                  >excellence</span
+                >,
+                <span class="font-medium text-purple-600 dark:text-purple-400"
+                  >innovation</span
+                >, and
+                <span class="font-medium text-indigo-600 dark:text-indigo-400"
+                  >performance.</span
+                >
                 Our experienced team excels at streamlining operations,
                 enhancing athlete and guest experiences, and fostering
                 sustainable growth for multi-sport venues. With an emphasis on
