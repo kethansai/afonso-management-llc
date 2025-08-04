@@ -64,7 +64,7 @@
         >
           <div class="space-y-6">
             <h2
-              class="text-center md:text-left text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 tracking-tight dark:text-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text font-playfair"
+              class="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 tracking-tight dark:text-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text font-playfair"
               v-motion
               :initial="{ opacity: 0, y: 20 }"
               :enter="{
@@ -73,16 +73,17 @@
                 transition: { duration: 600, delay: 600 },
               }"
             >
-              Hi, I'm Oscar Afonso
+              Hi, I'm Oscar Afonso <br />
+              <span class="text-3xl">Welcome to my business.</span>
             </h2>
             <div
-              class="w-20 h-1 mx-auto md:mx-0 dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 rounded-full"
+              class="w-40 h-1 mx-auto dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 rounded-full"
               v-motion
               :initial="{ scaleX: 0 }"
               :enter="{ scaleX: 1, transition: { duration: 600, delay: 800 } }"
             ></div>
             <p
-              class="text-center md:text-left text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-gray-300"
+              class="text-center text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-gray-300"
               v-motion
               :initial="{ opacity: 0, y: 20 }"
               :enter="{

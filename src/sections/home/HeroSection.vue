@@ -33,7 +33,7 @@
                   transition: { duration: 800, delay: 700, ease: 'backOut' },
                 }"
               >
-                Welcome to Afonso Management
+                Afonso Management
               </h3>
 
               <!-- Description with stagger animation -->
